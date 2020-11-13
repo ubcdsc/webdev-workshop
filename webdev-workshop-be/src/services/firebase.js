@@ -70,15 +70,13 @@ class Firebase {
         const doc = await this.db.collection("items").doc(`${id}`).get();
         const cartDoc = await this.db.collection("cart").doc(`${id}`).get();
         
-        this.db.collection("cart").doc(`${id}`).set({
+        return this.db.collection("cart").doc(`${id}`).set({
             name: doc.data().name,
             price: doc.data().price,
             imageURL: doc.data().imageURL,
             quantity: (typeof cartDoc.data() === "undefined") ? 1 : (cartDoc.data().quantity + 1)
-        }).then().catch(e => {
-          console.log(e);
-        });
-    }
+        }).then(() => this.getCart());
+    };
 
     async getCart() {
         const snapshot = await this.db.collection("cart").get();

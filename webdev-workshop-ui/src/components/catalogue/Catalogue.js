@@ -4,7 +4,7 @@ import { StyledRow, StyledCol, ImageBox, ItemName, ItemPrice } from './StyledCat
 import { addShoppingCart } from '../services/cartService';
 
 const Collection = () => {
-  const { items } = useContext(AppContext);
+  const { items, setCart } = useContext(AppContext);
   const [collectedItems, setCollectedItems] = useState([]);
 
   useEffect(() => {
@@ -26,7 +26,11 @@ const Collection = () => {
     items.forEach((cartItem, idx) => {
       if (cartItem.name === item.name) id = idx + 1;
     })
-    addShoppingCart({ id });
+    const addItemToCart = async () => {
+      const updatedCart = await addShoppingCart({ id });
+      setCart(updatedCart);
+    }
+    addItemToCart();
   }
 
   const makeCols = rowOfItems => {
