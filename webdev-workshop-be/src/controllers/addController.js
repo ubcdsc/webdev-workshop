@@ -1,6 +1,6 @@
 const axiosConfig = require("../config/axiosConfig");
 
-const multiplyController = async (req, res, next) => {
+const addController = async (req, res, next) => {
   const { x, y } = req.body;
   
   // wait a few seconds to mimic async behavior
@@ -12,4 +12,4 @@ const multiplyController = async (req, res, next) => {
   }, 500);
 };
 
-module.exports = multiplyController;
+module.exports = addController;

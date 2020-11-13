@@ -1,8 +1,13 @@
 import React from 'react';
+import Navigation from './Navigation';
+import Collection from './Collection';
 
 const Catalogue = () => {
   return (
-    null;
+    <>
+      <Navigation />
+      <Collection />
+    </>
   )
 }
 

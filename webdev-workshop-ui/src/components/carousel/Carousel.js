@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Carousel = () => {
-  return (
-    null;
-  )
+  return null;
 }
 
 export default Carousel;

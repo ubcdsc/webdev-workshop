@@ -1,9 +1,11 @@
 const Router = require('express-promise-router');
-const multiplyController = require('./controllers/multiplyController');
+const getController = require('./controllers/getController');
+const addController = require('./controllers/addController');
 
 const router = Router();
 
-router.post('/math/multiply', multiplyController);
+router.post('/get', getController);
+router.post('/add', addController);
 
 module.exports = router;
 
