@@ -13,7 +13,7 @@ const Collection = () => {
         <StyledCol>
           <ImageBox src={ItemImage1} alt="" />
           <ItemName>David Dobrik: Rainbow Hoodie</ItemName>
-          <ItemPrice><a>$67</a></ItemPrice>
+          <ItemPrice>$67</ItemPrice>
         </StyledCol>
         <StyledCol>
           <ImageBox src={ItemImage2} alt="" />

@@ -15,6 +15,8 @@
 }
 
 .header__logo {
+  position: absolute;
+  margin-top: -20px; 
   width: 120px;
   object-fit: contain;
   float: center;
@@ -22,6 +24,7 @@
 
 .header__optionLine {
   font-size: 11px;
+  font-family: sans-serif;
   color: grey;
 }
 

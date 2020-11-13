@@ -5,16 +5,14 @@ import Sort from '../../images/sort.jpg';
 
 const Navigation = () => {
   return (
-    <>
-      <Navbar>
-        <NavItem>
-          <GridImage src={Grids} alt="Grid layout" />
-        </NavItem>
-        <NavItem style={{ right: '0px' }}>
-          <SortImage src={Sort} alt="Sort" />
-        </NavItem>
-      </Navbar>
-    </>
+    <Navbar>
+      <NavItem>
+        <GridImage src={Grids} alt="Grid layout" />
+      </NavItem>
+      <NavItem style={{ right: '0px' }}>
+        <SortImage src={Sort} alt="Sort" />
+      </NavItem>
+    </Navbar>
   )
 }
 
