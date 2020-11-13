@@ -20,13 +20,13 @@ class Firebase {
         return this.storage;
     }
 
-    async getProducts() {
-        const snapshot = await this.db.collection("products").get();
+    async getItems() {
+        const snapshot = await this.db.collection("items").get();
         return snapshot.docs.map(doc => doc.data());
     }
 
-    async getProduct(id) {
-        const doc = await this.db.collection("products").doc(id).get();
+    async getItem(id) {
+        const doc = await this.db.collection("items").doc(id).get();
 
         if(doc.exists){
             return doc.data();
@@ -35,11 +35,11 @@ class Firebase {
         }
     }
 
-    async addProduct(id, productName, productPrice, image) {
+    async addItem(id, itemName, itemPrice, image) {
         const url = await this.uploadImage(id, image);
-        this.db.collection("products").doc(id).set({
-            name: productName,
-            price: productPrice,
+        this.db.collection("items").doc(id).set({
+            name: itemName,
+            price: itemPrice,
             imageURL: url
         });
     }
@@ -51,16 +51,24 @@ class Firebase {
             contentType: image.type
         };
 
-        return await ref.child("product-images/" + id).put(image,metadata)
+        return await ref.child("item-images/" + id).put(image,metadata)
             .then(snapshot => snapshot.ref.getDownloadURL())
             .then(url => {
                 return url;
             })
     }
     
-    async addToCart(id, ) {
-        const doc = await this.db.collection("products").doc(id).get();
-        this.db.collection("cart").set({...doc.data(), quantity: quantity});
+    async addToCart(id) {
+        const doc = await this.db.collection("items").doc(id).get();
+        const cartDoc = await this.db.collection("cart").doc(id).get();
+        console.log(cartDoc.data() === "undefined")
+        
+        this.db.collection("cart").doc(id).set({
+            name: doc.data().name,
+            price: doc.data().price,
+            imageURL: doc.data().imageURL,
+            quantity: (typeof cartDoc.data() === "undefined") ? 1 : (cartDoc.data().quantity + 1)
+        });
     }
 
     async getCart() {

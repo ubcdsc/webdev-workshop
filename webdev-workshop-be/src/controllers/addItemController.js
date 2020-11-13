@@ -1,13 +1,9 @@
-const getItemController = async (req, res, next) => {
-  const { x, y } = req.body;
-  
-  // wait a few seconds to mimic async behavior
-  setTimeout(() => {
-    res.json({
-      result: x * y,
-      timestamp,
-    });
-  }, 500);
-};
+import addItem from '../services/itemService';
 
-module.exports = getItemController;
+const addItem = async(req, res) => {
+  const {id, productName, productPrice, image} = req.body();
+  const response = await addItem(id, productName, productPrice, image);
+  res.json(response);
+}
+
+module.exports = addItemController;

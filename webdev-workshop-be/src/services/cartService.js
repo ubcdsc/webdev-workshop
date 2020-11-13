@@ -1,8 +1,11 @@
 import firebase from './firebase';
 
-const addToCart = (id, quantity) => {
+export const addToCart = (id, quantity) => {
   const fb = new firebase();
   fb.addToCart(id, quantity);
 }
 
-export default addToCart;
+export const getCart = () => {
+  const fb = new firebase();
+  return fb.getCart();
+}

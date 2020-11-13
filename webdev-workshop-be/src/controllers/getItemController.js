@@ -1,13 +1,7 @@
-const getItemController = async (req, res, next) => {
-  const { x, y } = req.body;
-  
-  // wait a few seconds to mimic async behavior
-  setTimeout(() => {
-    res.json({
-      result: x * y,
-      timestamp,
-    });
-  }, 500);
+import {getItem} from '../services/cartService';
+
+const getItemController = async (req, res) => {
+  res.json(getItem());
 };
 
 module.exports = getItemController;
