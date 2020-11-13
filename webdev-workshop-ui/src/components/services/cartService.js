@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getShoppingCart = async request => {
-  const response = await axios.get('http://localhost:3003/cart/get', request);
+  const response = await axios.get('http://localhost:3003/cart/get');
   return response.data;
 };
 
@@ -11,7 +11,7 @@ export const addShoppingCart = async request => {
 }
 
 export const getItems = async request => {
-  const response = await axios.get('http://localhost:3003/item/get', request);
+  const response = await axios.get('http://localhost:3003/item/get');
   return response.data;
 }
 
