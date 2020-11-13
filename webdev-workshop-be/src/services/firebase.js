@@ -58,9 +58,9 @@ class Firebase {
             })
     }
     
-    async addToCart(id) {
+    async addToCart(id, ) {
         const doc = await this.db.collection("products").doc(id).get();
-        this.db.collection("cart").add(doc.data());
+        this.db.collection("cart").set({...doc.data(), quantity: quantity});
     }
 
     async getCart() {

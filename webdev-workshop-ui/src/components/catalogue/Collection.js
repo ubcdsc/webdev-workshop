@@ -9,7 +9,7 @@ import ItemImage4 from '../../images/4.jpg';
 const Collection = () => {
 
   const handleClick = () => {
-    const response = addShoppingCart('hello');
+    const response = addShoppingCart('id');
     console.log(response);
   }
 
