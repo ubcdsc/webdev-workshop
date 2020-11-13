@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import LocalMallOutlinedIcon from '@material-ui/icons/LocalMallOutlined';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
-import logo from "../src/Images/fanjoy.png";
+import logo from "../src/images/fanjoy.png";
 
 function Header() {
     return (
