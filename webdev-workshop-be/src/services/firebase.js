@@ -6,14 +6,14 @@ class Firebase {
     constructor() {
         if(!firebase.apps.length) {
             firebase.initializeApp({
-                apiKey: process.env.REACT_APP_PROJECT_ID,
-                authDomain: process.env.REACT_APP_ID,
-                databaseURL: process.env.REACT_APP_DATABASE_URL,
-                projectId: process.env.REACT_APP_STORAGE_BUCKET,
-                storageBucket: process.env.REACT_APP_LOCATION_ID,
-                messagingSenderId: process.env.REACT_APP_API_KEY,
-                appId: process.env.REACT_APP_AUTH_DOMAIN,
-                measurementId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+              "projectId": "dyne-web-tutorial",
+              "appId": "1:25911646558:web:e72285adc3d257a3fd17cf",
+              "databaseURL": "https://dyne-web-tutorial.firebaseio.com",
+              "storageBucket": "dyne-web-tutorial.appspot.com",
+              "locationId": "us-central",
+              "apiKey": "AIzaSyBy0p0ddLfvadf_8wfVXcJYf5pBnxkugkU",
+              "authDomain": "dyne-web-tutorial.firebaseapp.com",
+              "messagingSenderId": "25911646558"
             });
         }
         this.db = firebase.firestore();

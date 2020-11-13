@@ -7,7 +7,7 @@ const addItem = (id, productName, productPrice, image) => {
 
 const getItem = (id) => {
   const fb = new firebase();
-  return fb.getItem(id);
+  return fb.getItems(id);
 }
 
 const itemServices = {

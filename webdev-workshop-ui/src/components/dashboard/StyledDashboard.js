@@ -23,6 +23,7 @@ export const Subtitle = styled.h3`
 export const Text = styled.p`
   padding: 0px 0px 0px 40px;
   margin: 0px;
+  margin-top: 10px;
   font-family: sans-serif;
 `;
 
