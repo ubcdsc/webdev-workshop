@@ -46,7 +46,11 @@ export const StyledRow = styled(Row)`
 `;
 
 export const StyledCol = styled(Col)`
-  margin: 10px;
+  position: relative;
+  float: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
 `;
 
 export const ImageBox = styled.img`
@@ -65,11 +69,19 @@ export const ItemName = styled.h4`
   margin-top: 20px;
 `;
 
-export const ItemPrice = styled.h4`
+export const ItemPrice = styled.button`
   font-family: sans-serif;
   font-size: 14px;
+  margin-bottom: 10px;
   color: #939393;
   font-weight: normal;
   text-align: center;
-  margin-top: -10px;
+  border: none;
+  outline: none;
+  background: none;
+  transition: 0.3s ease all;
+  &:hover {
+    color: red;
+    cursor: pointer;
+  }
 `;

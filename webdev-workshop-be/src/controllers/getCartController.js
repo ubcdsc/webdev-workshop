@@ -1,4 +1,4 @@
-const getController = async (req, res, next) => {
+const getCartController = async (req, res, next) => {
   const { x, y } = req.body;
   
   // wait a few seconds to mimic async behavior
@@ -10,4 +10,4 @@ const getController = async (req, res, next) => {
   }, 500);
 };
 
-module.exports = getController;
+module.exports = getCartController;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledRow, StyledCol, ImageBox, ItemName, ItemPrice } from './StyledCatalogue';
+import { addShoppingCart } from '../services/cartService';
 import ItemImage1 from '../../images/1.jpg';
 import ItemImage2 from '../../images/2.jpg';
 import ItemImage3 from '../../images/3.jpg';
@@ -7,13 +8,18 @@ import ItemImage4 from '../../images/4.jpg';
 
 const Collection = () => {
 
+  const handleClick = () => {
+    const response = addShoppingCart('hello');
+    console.log(response);
+  }
+
   const Items = () => {
     return (
       <>
         <StyledCol>
           <ImageBox src={ItemImage1} alt="" />
           <ItemName>David Dobrik: Rainbow Hoodie</ItemName>
-          <ItemPrice>$67</ItemPrice>
+          <ItemPrice onClick={handleClick}>$67</ItemPrice>
         </StyledCol>
         <StyledCol>
           <ImageBox src={ItemImage2} alt="" />
