@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Box, Title, Subtitle, StyledInput, Text } from './StyledDashboard';
+import { Box, Title, Subtitle, StyledInput, Text, StyledButton, StyledRow } from './StyledDashboard';
 import AppContext from '../context/AppContext';
 
 const Dashboard = () => {
@@ -17,9 +17,9 @@ const Dashboard = () => {
   return (
     <Grid>
       <Box>
-        <Row>
+        <StyledRow>
           <Title>Dashboard</Title>
-        </Row>
+        </StyledRow>
         <Row>
           <Col>
             <Row>
@@ -33,6 +33,12 @@ const Dashboard = () => {
             </Row>
             <Row>
               <StyledInput placeholder="price" />
+            </Row>
+            <Row>
+              <StyledInput type="file" />
+            </Row>
+            <Row>
+              <StyledButton type="submit" />
             </Row>
           </Col>
           <Col>
