@@ -6,7 +6,7 @@ import Navigation from './navigation/Navigation';
 import Catalogue from './catalogue/Catalogue';
 import Dashboard from './dashboard/Dashboard';
 import AppContext from './context/AppContext';
-import { getShoppingCart, getItems, hello } from './services/cartService'; 
+import { getShoppingCart, getItems } from './services/cartService'; 
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -25,7 +25,6 @@ const App = () => {
     }
     const loadItems = async () => {
       const loadedItems = await getItems();
-      console.log(loadedItems);
       setCart(loadedItems);
     }
     loadCart();
