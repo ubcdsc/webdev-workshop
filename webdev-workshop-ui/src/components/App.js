@@ -25,7 +25,7 @@ const App = () => {
     }
     const loadItems = async () => {
       const loadedItems = await getItems();
-      setCart(loadedItems);
+      setItems(loadedItems);
     }
     loadCart();
     loadItems();

@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Box, Title, Subtitle, StyledInput, Text } from './StyledDashboard';
+import { Box, Title, Subtitle, StyledInput, Text, ItemImage } from './StyledDashboard';
 import AppContext from '../context/AppContext';
 
 const Dashboard = () => {
   const { cart } = useContext(AppContext);
   const cartItems = () => {
-    cart?.map(item => {
+    return cart.map(item => {
       return (
         <Row>
-          <Text>{item.name}, {item.quantity}</Text>          
+          <ItemImage src={item.imageURL} alt="" />
+          <Text>Item: {item.name}<br />Quantity: {item.quantity}</Text>
         </Row>
       )
     })

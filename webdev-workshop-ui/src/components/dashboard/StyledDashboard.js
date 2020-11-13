@@ -20,6 +20,7 @@ export const Subtitle = styled.h3`
 export const Text = styled.p`
   padding: 0px 0px 0px 40px;
   margin: 0px;
+  margin-top: 10px;
   font-family: sans-serif;
 `;
 
@@ -27,5 +28,12 @@ export const StyledInput = styled.input`
   width: 250px;
   height: 30px;
   margin: 0px 0px 20px 40px;
+`;
+
+export const ItemImage = styled.img`
+  width: 125px;
+  height: 125px;
+  padding: 0px 0px 0px 40px;
+  margin: 0px -20px 0px 20px;
 `;
 
