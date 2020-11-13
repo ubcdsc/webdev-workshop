@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, GridImage, SortImage } from './StyledCatalogue';
+import { Navbar, NavItem, GridImage, SortImage } from './StyledNavigation';
 import Grids from '../../images/grid.jpg';
 import Sort from '../../images/sort.jpg';
 

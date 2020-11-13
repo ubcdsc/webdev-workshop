@@ -10,7 +10,7 @@ export const addShoppingCart = async request => {
   return response.data;
 }
 
-export const getItem = async request => {
+export const getItems = async request => {
   const response = await axios.get('http://localhost:3003/item/get', request);
   return response.data;
 }
