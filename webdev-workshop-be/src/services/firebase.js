@@ -1,6 +1,6 @@
-import firebase from "firebase"
-import "firebase/storage"
-import "firebase/firestore"
+const firebase = require("firebase");
+require("firebase/storage");
+require("firebase/firestore");
 
 class Firebase {
     constructor() {
@@ -61,7 +61,6 @@ class Firebase {
     async addToCart(id) {
         const doc = await this.db.collection("items").doc(id).get();
         const cartDoc = await this.db.collection("cart").doc(id).get();
-        console.log(cartDoc.data() === "undefined")
         
         this.db.collection("cart").doc(id).set({
             name: doc.data().name,
@@ -78,4 +77,4 @@ class Firebase {
 
 }
 
-export default Firebase;
+module.exports.Firebase = Firebase;

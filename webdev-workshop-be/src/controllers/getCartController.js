@@ -1,7 +1,8 @@
-import {getCart} from '../services/cartService';
+const cartServices = require('../services/cartService');
 
 const getCartController = async (req, res) => {
-  res.json(getCart());
+  const response = await cartServices.getCart()
+  res.json(response);
 };
 
 module.exports = getCartController;
