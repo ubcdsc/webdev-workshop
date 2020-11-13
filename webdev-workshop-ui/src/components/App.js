@@ -29,7 +29,7 @@ const App = () => {
     }
     loadCart();
     loadItems();
-  });
+  }, []);
 
   return (
     <AppContext.Provider value={context}>
