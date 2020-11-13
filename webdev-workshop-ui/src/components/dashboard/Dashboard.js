@@ -18,9 +18,9 @@ const Dashboard = () => {
   return (
     <Grid>
       <Box>
-        <Row>
+        <StyledRow>
           <Title>Dashboard</Title>
-        </Row>
+        </StyledRow>
         <Row>
           <Col>
             <Row>
@@ -34,6 +34,12 @@ const Dashboard = () => {
             </Row>
             <Row>
               <StyledInput placeholder="price" />
+            </Row>
+            <Row>
+              <StyledInput type="file" />
+            </Row>
+            <Row>
+              <StyledButton type="submit" />
             </Row>
           </Col>
           <Col>
