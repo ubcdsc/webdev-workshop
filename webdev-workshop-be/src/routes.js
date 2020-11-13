@@ -1,14 +1,14 @@
 const Router = require('express-promise-router');
 const getCartController = require('./controllers/getCartController');
 const addCartController = require('./controllers/addCartController');
-const getItemController = require('./controllers/getItemController');
+const getItemsController = require('./controllers/getItemsController');
 const addItemController = require('./controllers/addItemController');
 
 const router = Router();
 
 router.get('/cart/get', getCartController);
 router.post('/cart/add', addCartController);
-router.get('/item/get', getItemController);
+router.get('/item/get', getItemsController);
 router.patch('/item/add', addItemController);
 
 module.exports = router;

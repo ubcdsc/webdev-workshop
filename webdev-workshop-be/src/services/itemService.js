@@ -5,14 +5,14 @@ const addItem = (id, productName, productPrice, image) => {
   fb.addProduct(id, productName, productPrice, image);
 }
 
-const getItem = (id) => {
+const getItems = () => {
   const fb = new firebase();
-  return fb.getItems(id);
+  return fb.getItems();
 }
 
 const itemServices = {
   addItem,
-  getItem
+  getItems
 }
 
 module.exports = itemServices;

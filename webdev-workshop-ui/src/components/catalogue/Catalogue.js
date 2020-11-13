@@ -1,51 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import AppContext from '../context/AppContext';
 import { StyledRow, StyledCol, ImageBox, ItemName, ItemPrice } from './StyledCatalogue';
 import { addShoppingCart } from '../services/cartService';
-import ItemImage1 from '../../images/1.jpg';
-import ItemImage2 from '../../images/2.jpg';
-import ItemImage3 from '../../images/3.jpg';
-import ItemImage4 from '../../images/4.jpg';
 
 const Collection = () => {
+  const { items } = useContext(AppContext);
+  const [collectedItems, setCollectedItems] = useState([]);
 
-  const handleClick = () => {
-    const response = addShoppingCart('id');
-    console.log(response);
+  useEffect(() => {
+    const collection = [];
+    let subcollection = [];
+    items.forEach((item, idx) => {
+      subcollection.push(item);
+      if (idx / 3 === 1) {
+        collection.push(subcollection);
+        subcollection = [];
+      }
+    });
+    collection.push(subcollection);
+    setCollectedItems(collection);
+  }, [items]);
+
+  const handleClick = item => {
+    // const response = addShoppingCart(item.name);
+    // console.log(response);
   }
 
-  const Items = () => {
+  const makeCols = rowOfItems => {
+    return rowOfItems.map(item => {
+      return (
+        <StyledCol key={item.name}>
+          <ImageBox src={item.imageURL} alt="" />
+          <ItemName>{item.name}</ItemName>
+          <ItemPrice onClick={handleClick(item)}>{item.price}</ItemPrice>
+        </StyledCol>
+      )
+    })
+  }
+
+  return collectedItems.map(rowOfItems => {
     return (
-      <>
-        <StyledCol>
-          <ImageBox src={ItemImage1} alt="" />
-          <ItemName>David Dobrik: Rainbow Hoodie</ItemName>
-          <ItemPrice onClick={handleClick}>$67</ItemPrice>
-        </StyledCol>
-        <StyledCol>
-          <ImageBox src={ItemImage2} alt="" />
-          <ItemName>David Dobrik: Rainbow Crewneck</ItemName>
-          <ItemPrice>$60</ItemPrice>
-        </StyledCol>
-        <StyledCol>
-          <ImageBox src={ItemImage3} alt="" />
-          <ItemName>David Dobrik: Rainbow Sweatpants</ItemName>
-          <ItemPrice>$54</ItemPrice>
-        </StyledCol>
-        <StyledCol>
-          <ImageBox src={ItemImage4} alt="" />
-          <ItemName>David Dobrik: Rainbow Shirt</ItemName>
-          <ItemPrice>$34</ItemPrice>
-        </StyledCol>
-      </>
+      <StyledRow key={`row of ${rowOfItems[0]?.item}`}>
+        {makeCols(rowOfItems)}
+      </StyledRow>
     )
-  }
-
-  return (
-    <StyledRow>
-      <Items />
-      <Items />
-    </StyledRow>
-  )
+  })
 }
 
 export default Collection;

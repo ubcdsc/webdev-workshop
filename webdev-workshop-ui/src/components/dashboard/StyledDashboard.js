@@ -31,9 +31,9 @@ export const StyledInput = styled.input`
 `;
 
 export const ItemImage = styled.img`
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 150px;
   padding: 0px 0px 0px 40px;
-  margin: 0px -20px 0px 20px;
+  margin: 0px -20px 20px 20px;
 `;
 
