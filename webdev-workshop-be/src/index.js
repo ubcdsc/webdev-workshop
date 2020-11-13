@@ -1,13 +1,12 @@
-const server = require('./server');
-const logger = require('./helpers/logger.js');
-const config = require('./config');
+const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
 
-server.listen(config.port, () => {
-  logger.info(`Started on port ${server.address().port}`);
-});
+const app = express();
 
-// Workaround for nodemon not killing all child processes
-process.on('SIGINT', () => {
-  logger.info('Server shutting down');
-  process.exit();
+app.use(bodyParser.json());
+app.use('/', routes);
+
+var server = app.listen(3003, function() {
+  console.log('Server running on port %d', server.address().port);
 });

@@ -1,5 +1,3 @@
-const axiosConfig = require("../config/axiosConfig");
-
 const addController = async (req, res, next) => {
   const { x, y } = req.body;
   
