@@ -1,0 +1,48 @@
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+
+.header__dehaze {
+  padding: 20px 20px 20px 30px;
+}
+
+.header__logo {
+  width: 120px;
+  object-fit: contain;
+  float: center;
+}
+
+.header__optionLine {
+  font-size: 11px;
+  color: grey;
+}
+
+.header__expandIcon {
+  color: grey;
+  padding-top: 1px;
+}
+
+.header__accountIcon {
+  margin-left: 25px;
+}
+
+.header__searchIcon {
+  padding: 0px 15px 0px 15px;
+}
+
+.header__BasketIcon {
+  margin-right: 20px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
