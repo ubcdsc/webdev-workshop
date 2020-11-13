@@ -6,14 +6,6 @@ class Firebase {
     constructor() {
         if(!firebase.apps.length) {
             firebase.initializeApp({
-              "projectId": "dyne-web-tutorial",
-              "appId": "1:25911646558:web:e72285adc3d257a3fd17cf",
-              "databaseURL": "https://dyne-web-tutorial.firebaseio.com",
-              "storageBucket": "dyne-web-tutorial.appspot.com",
-              "locationId": "us-central",
-              "apiKey": "AIzaSyBy0p0ddLfvadf_8wfVXcJYf5pBnxkugkU",
-              "authDomain": "dyne-web-tutorial.firebaseapp.com",
-              "messagingSenderId": "25911646558"
             });
         }
         this.db = firebase.firestore();
