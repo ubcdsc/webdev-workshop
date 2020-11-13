@@ -22,17 +22,20 @@ const Collection = () => {
   }, [items]);
 
   const handleClick = item => {
-    // const response = addShoppingCart(item.name);
-    // console.log(response);
+    let id = null;
+    items.forEach((cartItem, idx) => {
+      if (cartItem.name === item.name) id = idx + 1;
+    })
+    addShoppingCart({ id });
   }
 
   const makeCols = rowOfItems => {
     return rowOfItems.map(item => {
       return (
-        <StyledCol key={item.name}>
+        <StyledCol key={`col of ${item?.name}`}>
           <ImageBox src={item.imageURL} alt="" />
           <ItemName>{item.name}</ItemName>
-          <ItemPrice onClick={handleClick(item)}>{item.price}</ItemPrice>
+          <ItemPrice onClick={() => handleClick(item)}>{item.price}</ItemPrice>
         </StyledCol>
       )
     })
@@ -40,7 +43,7 @@ const Collection = () => {
 
   return collectedItems.map(rowOfItems => {
     return (
-      <StyledRow key={`row of ${rowOfItems[0]?.item}`}>
+      <StyledRow key={`row of ${rowOfItems[0]?.name}`}>
         {makeCols(rowOfItems)}
       </StyledRow>
     )

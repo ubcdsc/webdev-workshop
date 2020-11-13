@@ -1,8 +1,8 @@
 const firebase = require('./firebase');
 
-const addToCart = (id, quantity) => {
+const addToCart = id => {
   const fb = new firebase();
-  fb.addToCart(id, quantity);
+  fb.addToCart(id);
 }
 
 const getCart = () => {

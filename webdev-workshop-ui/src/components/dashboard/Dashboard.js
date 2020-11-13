@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { Box, Title, Subtitle, StyledInput, Text, ItemImage } from './StyledDashboard';
+import { Box, Title, Subtitle, StyledInput, Text, ItemImage, StyledRow, StyledButton } from './StyledDashboard';
 import AppContext from '../context/AppContext';
 
 const Dashboard = () => {

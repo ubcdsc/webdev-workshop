@@ -6,6 +6,14 @@ class Firebase {
     constructor() {
         if(!firebase.apps.length) {
             firebase.initializeApp({
+              "projectId": "dyne-web-tutorial",
+              "appId": "1:25911646558:web:e72285adc3d257a3fd17cf",
+              "databaseURL": "https://dyne-web-tutorial.firebaseio.com",
+              "storageBucket": "dyne-web-tutorial.appspot.com",
+              "locationId": "us-central",
+              "apiKey": "AIzaSyBy0p0ddLfvadf_8wfVXcJYf5pBnxkugkU",
+              "authDomain": "dyne-web-tutorial.firebaseapp.com",
+              "messagingSenderId": "25911646558"
             });
         }
         this.db = firebase.firestore();
@@ -59,14 +67,16 @@ class Firebase {
     }
     
     async addToCart(id) {
-        const doc = await this.db.collection("items").doc(id).get();
-        const cartDoc = await this.db.collection("cart").doc(id).get();
+        const doc = await this.db.collection("items").doc(`${id}`).get();
+        const cartDoc = await this.db.collection("cart").doc(`${id}`).get();
         
-        this.db.collection("cart").doc(id).set({
+        this.db.collection("cart").doc(`${id}`).set({
             name: doc.data().name,
             price: doc.data().price,
             imageURL: doc.data().imageURL,
             quantity: (typeof cartDoc.data() === "undefined") ? 1 : (cartDoc.data().quantity + 1)
+        }).then().catch(e => {
+          console.log(e);
         });
     }
 
