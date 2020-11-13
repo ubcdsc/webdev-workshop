@@ -39,7 +39,7 @@ const Dashboard = () => {
             <Row>
               <Subtitle>Cart</Subtitle>
             </Row>
-            {cart ? cartItems(): null}
+            {cart[0] ? cartItems(): null}
           </Col>
         </Row>
       </Box>

@@ -19,9 +19,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    setCart(getShoppingCart());
-    setItems(getItems());
-  }, []);
+    const loadCart = async () => {
+      const loadedCart = getShoppingCart();
+      setCart(loadedCart);
+    }
+    const loadItems = async () => {
+      const loadedItems = getItems();
+      setCart(loadedItems);
+    }
+    loadCart();
+    loadItems();
+  });
 
   return (
     <AppContext.Provider value={context}>
