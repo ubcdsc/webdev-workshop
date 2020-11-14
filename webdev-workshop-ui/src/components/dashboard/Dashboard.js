@@ -50,7 +50,7 @@ const Dashboard = () => {
                 <StyledInput placeholder="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
               </Row>
               <Row>
-                <StyledInput type="file" ref={fileRef}  onChange={(e) => setFileInput(e.target)}/>
+                <StyledInput type="file" ref={fileRef}  onChange={(e) => setFileInput(e.target.files[0])}/>
               </Row>
               <Row>
                 <StyledButton type="submit" />

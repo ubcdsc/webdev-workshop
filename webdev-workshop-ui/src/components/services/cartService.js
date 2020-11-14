@@ -16,6 +16,7 @@ export const getItems = async request => {
 }
 
 export const addItem = async request => {
+  console.log(request);
   const response = await axios.post('http://localhost:3003/item/add', request);
   return response.data;
 }

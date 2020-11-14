@@ -45,6 +45,7 @@ class Firebase {
 
     async addItem(id, itemName, itemPrice, image) {
         const url = await this.uploadImage(id, image);
+        console.log(image,"hello");      
         return this.db.collection("items").doc(id).set({
             name: itemName,
             price: itemPrice,

@@ -9,7 +9,7 @@ const router = Router();
 router.get('/cart/get', getCartController);
 router.post('/cart/add', addCartController);
 router.get('/item/get', getItemsController);
-router.patch('/item/add', addItemController);
+router.post('/item/add', addItemController);
 
 module.exports = router;
 
