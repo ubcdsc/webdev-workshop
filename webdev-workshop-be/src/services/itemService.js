@@ -2,7 +2,7 @@ const firebase = require('./firebase');
 
 const addItem = (id, productName, productPrice, image) => {
   const fb = new firebase();
-  fb.addProduct(id, productName, productPrice, image);
+  return fb.addProduct(id, productName, productPrice, image);
 }
 
 const getItems = () => {
