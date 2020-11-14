@@ -16,6 +16,6 @@ export const getItems = async request => {
 }
 
 export const addItem = async request => {
-  const response = await axios.patch('http://localhost:3003/item/add', request);
+  const response = await axios.post('http://localhost:3003/item/add', request);
   return response.data;
 }

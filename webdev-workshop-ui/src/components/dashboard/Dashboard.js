@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Box, Title, Subtitle, StyledInput, Text, ItemImage, StyledRow, StyledButton } from './StyledDashboard';
+import { addItem } from '../services/cartService';
 import AppContext from '../context/AppContext';
 
 const Dashboard = () => {
@@ -8,16 +9,13 @@ const Dashboard = () => {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
-  const [file, setFile] = useState('');
+  const [fileInput, setFileInput] = useState('');
   const fileRef = useRef();
   
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const fileUploaded = event.target;
-    console.log(fileUploaded);
-    const file = fileUploaded.files;
-    console.log(file);
+    addItem({id, name, price, fileInput});
   }
 
   const cartItems = () => {
@@ -52,7 +50,7 @@ const Dashboard = () => {
                 <StyledInput placeholder="price" value={price}  onChange={(e) => setPrice(e.target.value)}/>
               </Row>
               <Row>
-                <StyledInput type="file" ref={fileRef}  onChange={(e) => setFile()}/>
+                <StyledInput type="file" ref={fileRef}  onChange={(e) => setFileInput(e.target)}/>
               </Row>
               <Row>
                 <StyledButton type="submit" />
